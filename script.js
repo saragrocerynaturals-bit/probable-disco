@@ -72,7 +72,7 @@ function addProduct(){
 const name=document.getElementById("pname").value;
 const price=document.getElementById("pprice").value;
 const image=document.getElementById("pimage").value;
-}
+
 if(name=="" || price=="" || image==""){
 alert("Fill all fields");
 return;
@@ -111,7 +111,7 @@ alert("Product Added Successfully");
 document.getElementById("pname").value="";
 document.getElementById("pprice").value="";
 document.getElementById("pimage").value="";
-
+}
   function adminLogin() {
 
 let pass = document.getElementById("adminPass").value;
