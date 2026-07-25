@@ -66,4 +66,50 @@ window.open(
 "_blank"
 );
 
+} 
+function addProduct(){
+
+const name=document.getElementById("pname").value;
+const price=document.getElementById("pprice").value;
+const image=document.getElementById("pimage").value;
+
+if(name=="" || price=="" || image==""){
+alert("Fill all fields");
+return;
+}
+
+products.push({
+name:name,
+price:Number(price),
+image:image
+});
+
+productList.innerHTML="";
+
+products.forEach(product=>{
+
+productList.innerHTML += `
+<div class="card">
+
+<img src="${product.image}" alt="${product.name}">
+
+<h3>${product.name}</h3>
+
+<p>₹${product.price}</p>
+
+<button class="btn" onclick="addToCart('${product.name}',${product.price})">
+🛒 Add to Cart
+</button>
+
+</div>
+`;
+
+});
+
+alert("Product Added Successfully");
+
+document.getElementById("pname").value="";
+document.getElementById("pprice").value="";
+document.getElementById("pimage").value="";
+
 }
