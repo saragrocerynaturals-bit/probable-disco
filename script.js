@@ -112,20 +112,21 @@ document.getElementById("pname").value="";
 document.getElementById("pprice").value="";
 document.getElementById("pimage").value="";
 
-} function adminLogin(){
+  function adminLogin() {
 
-let pass=document.getElementById("adminPass").value;
+let pass = document.getElementById("adminPass").value;
 
-if(pass==="1234"){
+if (pass === "1234") {
 
 alert("Login Successful");
 
-document.getElementById("login-box").style.display="none";
+document.getElementById("login-box").style.display = "none";
+document.getElementById("admin-panel").style.display = "block";
 
-}else{
+} else {
 
 alert("Wrong Password");
 
 }
 
-}
+  }
