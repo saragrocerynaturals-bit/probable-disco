@@ -72,7 +72,7 @@ function addProduct(){
 const name=document.getElementById("pname").value;
 const price=document.getElementById("pprice").value;
 const image=document.getElementById("pimage").value;
-
+}
 if(name=="" || price=="" || image==""){
 alert("Fill all fields");
 return;
