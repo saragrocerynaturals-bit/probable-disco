@@ -12,7 +12,7 @@ image:"growbag12x15.png"
 {
 name:"Cocopeat Block 5 KG",
 price:"₹249",
-image:"Cocopeat.png"
+image:"Cocopeat .png" 
 }
 ];
 
