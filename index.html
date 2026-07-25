@@ -142,12 +142,25 @@ style="width:90%;padding:12px;margin:8px;border-radius:8px;border:1px solid #ccc
 
 <select id="product"
 style="width:90%;padding:12px;margin:8px;border-radius:8px;border:1px solid #ccc;">
+<h3>Quantity</h3>
 
-<option>HDPE Grow Bag 12x12</option>
-<option>HDPE Grow Bag 12x15</option>
-<option>Cocopeat Block 5 KG</option>
-
+<select id="quantity"
+style="width:90%;padding:12px;margin:8px;border-radius:8px;border:1px solid #ccc;">
+<option>1</option>
+<option>2</option>
+<option>5</option>
+<option>10</option>
+<option>25</option>
 </select>
+
+<input id="address" type="text"
+placeholder="Delivery Address"
+style="width:90%;padding:12px;margin:8px;border-radius:8px;border:1px solid #ccc;">
+
+<input id="pincode" type="number"
+placeholder="PIN Code"
+style="width:90%;padding:12px;margin:8px;border-radius:8px;border:1px solid #ccc;">
+
 
 <textarea id="message"
 placeholder="Message"
@@ -307,20 +320,24 @@ setInterval(() => {
   current = (current + 1) % slides.length;
   slides[current].classList.add("active");
 }, 3000);
-  </script>
-  <script>
-function sendWhatsApp(){
+function sendWhatsApp() {
 
 var name=document.getElementById("name").value;
 var mobile=document.getElementById("mobile").value;
 var product=document.getElementById("product").value;
+var quantity = document.getElementById("quantity").value;
+var address = document.getElementById("address").value;
+var pincode = document.getElementById("pincode").value;
 var message=document.getElementById("message").value;
 
-var text=
-"Name: "+name+
-"%0AMobile: "+mobile+
-"%0AProduct: "+product+
-"%0AMessage: "+message;
+var text =
+"Name: " + name +
+"%0AMobile: " + mobile +
+"%0AProduct: " + product +
+"%0AQuantity: " + quantity +
+"%0AAddress: " + address +
+"%0APIN Code: " + pincode +
+"%0AMessage: " + message;
 
 window.open("https://wa.me/918428538170?text="+text,"_blank");
 
