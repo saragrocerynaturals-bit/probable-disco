@@ -41,7 +41,26 @@ margin:15px;
 padding:15px;
 border-radius:10px;
 box-shadow:0 0 10px rgba(0,0,0,.1);
+} 
+.slider{
+position:relative;
+width:100%;
+height:250px;
+overflow:hidden;
+border-radius:15px;
+margin:20px;
 }
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:1s;
+}
+.slide.active{
+opacity:1;
+}  
 footer{
 background:#2e7d32;
 color:white;
@@ -94,8 +113,14 @@ font-weight:bold;">
 🛒 Order Now
 </a>
 
-  </div>
-<div class="hero">
+  </div> 
+<div class="slider">
+  <img class="slide active" src="growbag.png">
+  <img class="slide" src="growbag12x15.png">
+  <img class="slide" src="Cocopeat.png">
+</div>
+  
+  <div class="hero">
 <h2>Welcome 🌱</h2>
 <p>Premium Gardening Products Delivered Across India.</p>
 
@@ -242,5 +267,15 @@ text-decoration:none;
 ">
 <img src="whatsapp.png" width="34" height="34" alt="WhatsApp">
 </a>
+  <script>
+const slides = document.querySelectorAll(".slide");
+let current = 0;
+
+setInterval(() => {
+  slides[current].classList.remove("active");
+  current = (current + 1) % slides.length;
+  slides[current].classList.add("active");
+}, 3000);
+  </script>
 </body>
 </html>
