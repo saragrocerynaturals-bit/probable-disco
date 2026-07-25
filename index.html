@@ -130,7 +130,36 @@ font-weight:bold;">
 Order on WhatsApp
 </a>
 </div>
+<div class="card">
 
+<h2>📋 Quick Order Form</h2>
+
+<input id="name" type="text" placeholder="Your Name"
+style="width:90%;padding:12px;margin:8px;border-radius:8px;border:1px solid #ccc;">
+
+<input id="mobile" type="tel" placeholder="Mobile Number"
+style="width:90%;padding:12px;margin:8px;border-radius:8px;border:1px solid #ccc;">
+
+<select id="product"
+style="width:90%;padding:12px;margin:8px;border-radius:8px;border:1px solid #ccc;">
+
+<option>HDPE Grow Bag 12x12</option>
+<option>HDPE Grow Bag 12x15</option>
+<option>Cocopeat Block 5 KG</option>
+
+</select>
+
+<textarea id="message"
+placeholder="Message"
+style="width:90%;padding:12px;margin:8px;border-radius:8px;border:1px solid #ccc;height:80px;"></textarea>
+
+<button
+onclick="sendWhatsApp()"
+style="background:#25D366;color:white;padding:15px 30px;border:none;border-radius:8px;font-size:18px;font-weight:bold;cursor:pointer;">
+📲 Send Order on WhatsApp
+</button>
+
+</div>
 <div class="products"><div class="card">
 <img src="growbag.png" style="width:100%;border-radius:10px;">
 
@@ -279,5 +308,23 @@ setInterval(() => {
   slides[current].classList.add("active");
 }, 3000);
   </script>
+  <script>
+function sendWhatsApp(){
+
+var name=document.getElementById("name").value;
+var mobile=document.getElementById("mobile").value;
+var product=document.getElementById("product").value;
+var message=document.getElementById("message").value;
+
+var text=
+"Name: "+name+
+"%0AMobile: "+mobile+
+"%0AProduct: "+product+
+"%0AMessage: "+message;
+
+window.open("https://wa.me/918428538170?text="+text,"_blank");
+
+}
+</script>
 </body>
 </html>
