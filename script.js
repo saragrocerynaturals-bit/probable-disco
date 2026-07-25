@@ -130,3 +130,15 @@ alert("Wrong Password");
 }
 
   }
+.banner-slider{
+width:100%;
+margin:20px auto;
+text-align:center;
+}
+
+.banner-slider img{
+width:100%;
+max-height:350px;
+object-fit:cover;
+border-radius:12px;
+}
