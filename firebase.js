@@ -1,5 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import {
+  getFirestore,
+  addDoc,
+  collection
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 const firebaseConfig = {
   apiKey: "AIzaSyCEfYI6Wcc89TVKLr_pFQbA7KOnyb52GvA",
   authDomain: "sara-unique-naturals.firebaseapp.com",
@@ -14,4 +18,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 window.db = db;
+window.addDoc = addDoc;
+window.collection = collection;
+
 console.log("Firebase Connected");
