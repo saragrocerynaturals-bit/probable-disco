@@ -2,6 +2,8 @@ import {
   addDoc,
   collection
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const db = window.db;
 const products = [
 {
 name:"HDPE Grow Bag 12x12",
@@ -71,8 +73,9 @@ window.open(
 );
 
 } 
-function addProduct(){
 
+async function addProduct() {
+  
 const name=document.getElementById("pname").value;
 const price=document.getElementById("pprice").value;
 const image=document.getElementById("pimage").value;
@@ -87,7 +90,11 @@ name:name,
 price:Number(price),
 image:image
 });
-
+await addDoc(collection(db, "products"), {
+  name: name,
+  price: Number(price),
+  image: image
+});
 productList.innerHTML="";
 
 products.forEach(product=>{
