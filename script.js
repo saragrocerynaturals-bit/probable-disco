@@ -1,4 +1,7 @@
-const products = [
+import {
+  addDoc,
+  collection
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";const products = [
 {
 name:"HDPE Grow Bag 12x12",
 price:249,
